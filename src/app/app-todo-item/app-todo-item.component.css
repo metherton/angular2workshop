@@ -1,0 +1,15 @@
+.expensive {
+  color: red;
+}
+
+.cheap {
+  color: blue;
+}
+
+.item {
+  font-size: 2em;
+}
+
+.item:hover {
+  cursor: pointer;
+}

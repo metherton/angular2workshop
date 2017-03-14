@@ -1,0 +1,2 @@
+<app-todo-item *ngFor="let item of items" [item]="item" (itemRemoved)="remove($event)"></app-todo-item>
+<app-add-item (itemAdded)="add($event)"></app-add-item>
