@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {AppShoppingcartService} from '../app-shoppingcart/app-shoppingcart.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -10,16 +11,16 @@ export class AppTodoItemComponent implements OnInit {
   @Input()
   item: any;
 
-  @Output()
-  itemRemoved = new EventEmitter();
+  // @Output()
+  // itemRemoved = new EventEmitter();
 
-  constructor() { }
+  constructor(private shoppingCartService: AppShoppingcartService) { }
 
   ngOnInit() {
   }
 
   remove() {
-    this.itemRemoved.next(this.item.id);
+    this.shoppingCartService.remove(this.item);
   }
 
 }
