@@ -1,7 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {AppShoppingcartService} from "../app-shoppingcart/app-shoppingcart.service";
 
 export class Item {
-  constructor(public id: number, public itemname: string, public itemprice: string) {
+  constructor(public itemname: string, public itemprice: string) {
   }
 }
 
@@ -12,23 +13,15 @@ export class Item {
 })
 export class AppAddItemComponent implements OnInit {
 
-  model = new Item(0,'', '');
-  resetFormHack = true;
+  model = new Item('', '');
 
-  @Output()
-  itemAdded = new EventEmitter();
-
-  constructor() { }
+  constructor(private shoppingCartService: AppShoppingcartService) { }
 
   ngOnInit() {
   }
 
   add() {
-    this.itemAdded.next(this.model);
-    console.log('Logging with', this.model.itemname, this.model.itemprice);
-    this.model = new Item(0,'', '');
-    this.resetFormHack = false;
-    setTimeout(() => this.resetFormHack = true, 0);
+    this.shoppingCartService.add(this.model);
   }
 
 }

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AppShoppingcartComponent } from './app-shoppingcart/app-shoppingcart.component';
+import { AppShoppingcartService } from './app-shoppingcart/app-shoppingcart.service';
 import { AppTodoItemComponent } from './app-todo-item/app-todo-item.component';
 import { AppAddItemComponent } from './app-add-item/app-add-item.component';
 
@@ -22,7 +23,7 @@ import { AppAddItemComponent } from './app-add-item/app-add-item.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AppShoppingcartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

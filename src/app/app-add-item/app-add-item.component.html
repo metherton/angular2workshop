@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Add Item</h1>
-  <form *ngIf="resetFormHack" (ngSubmit)="add()" #addItemForm="ngForm">
+  <form (ngSubmit)="add()" #addItemForm="ngForm">
     <div class="form-group">
       <label for="itemname">Item Name</label>
       <input type="text" class="form-control" required [(ngModel)]="model.itemname" name="itemname" #itemnameSpy #itemname="ngModel">

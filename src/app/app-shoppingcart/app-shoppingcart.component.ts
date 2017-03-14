@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppShoppingcartService} from "./app-shoppingcart.service";
+import {Subscription} from "rxjs/Rx";
 
 @Component({
   selector: 'app-shoppingcart',
@@ -8,26 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppShoppingcartComponent implements OnInit {
 
   public items: any[];
-  static nextId = 4;
 
-  constructor() {
-    this.items = [
-      {id: 1, name: 'fish', price: 145},
-      {id: 2, name: 'peas', price: 25},
-      {id: 3, name: 'meat', price: 55},
-    ].sort((i1, i2) => i2.price - i1.price);
+  constructor(private shoppingCartService: AppShoppingcartService) {
   }
 
   ngOnInit() {
+    this.items = this.shoppingCartService.items;
   }
-
-  add(item) {
-    this.items.push({id: AppShoppingcartComponent.nextId, name: item.itemname, price: item.itemprice});
-    AppShoppingcartComponent.nextId++;
-  }
-
-  remove(id) {
-    this.items = this.items.filter((i) => i.id !== id);
-  }
-
 }
