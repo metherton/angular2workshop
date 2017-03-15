@@ -10,6 +10,7 @@ import { AppShoppingcartService } from './app-shoppingcart/app-shoppingcart.serv
 import { AppTodoItemComponent } from './app-todo-item/app-todo-item.component';
 import { AppAddItemComponent } from './app-add-item/app-add-item.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { AppClockComponent } from './app-clock/app-clock.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     AppShoppingcartComponent,
     AppTodoItemComponent,
     AppAddItemComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    AppClockComponent
   ],
   imports: [
     BrowserModule,
