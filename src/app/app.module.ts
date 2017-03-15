@@ -9,13 +9,15 @@ import { AppShoppingcartComponent } from './app-shoppingcart/app-shoppingcart.co
 import { AppShoppingcartService } from './app-shoppingcart/app-shoppingcart.service';
 import { AppTodoItemComponent } from './app-todo-item/app-todo-item.component';
 import { AppAddItemComponent } from './app-add-item/app-add-item.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppShoppingcartComponent,
     AppTodoItemComponent,
-    AppAddItemComponent
+    AppAddItemComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
