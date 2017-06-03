@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AppShoppingcartService} from "./app-shoppingcart.service";
 import {Subscription} from "rxjs/Rx";
 
+
+
 @Component({
   selector: 'app-shoppingcart',
   templateUrl: './app-shoppingcart.component.html',
@@ -9,7 +11,7 @@ import {Subscription} from "rxjs/Rx";
 })
 export class AppShoppingcartComponent implements OnInit {
 
-  public items: any[];
+  public items: any[];  
 
   constructor(private shoppingCartService: AppShoppingcartService) {
   }

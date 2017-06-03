@@ -12,6 +12,8 @@ import {PlayerService} from './player.service'
 export class LeaderboardComponent implements OnInit {
 
   public players: Promise<any[]>;
+  public greeting = this.leaderboardService.getGreeting('dd').map(response => response.json()).map(g => g.content);
+
 
   constructor(private leaderboardService: LeaderboardService, private playerService: PlayerService) { }
 
@@ -20,6 +22,9 @@ export class LeaderboardComponent implements OnInit {
     this.players = this.leaderboardService.getPlayers()
       .then(leaderboard => leaderboard.map(r => this.playerService.getPlayer(r)))
       .then(players => Promise.all(players));
+
+
   }
+
 
 }
