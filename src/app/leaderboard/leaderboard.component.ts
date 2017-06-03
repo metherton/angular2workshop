@@ -12,7 +12,7 @@ import {PlayerService} from './player.service'
 export class LeaderboardComponent implements OnInit {
 
   public players: Promise<any[]>;
-  public greeting = this.leaderboardService.getGreeting('dd').then( gr => this.greeting = gr);
+  public greeting = this.leaderboardService.getToken().then(token => this.leaderboardService.getGreeting(token)).then( gr => this.greeting = gr);
 
 
   constructor(private leaderboardService: LeaderboardService, private playerService: PlayerService) { }
