@@ -20,8 +20,8 @@ export class LeaderboardService {
   //   return this.http.get(`/data/greeting.json`).toPromise().then(response => response.json());
   // }
 
-  getGreeting(token: string): any {
-    return this.http.get(`/data/greeting.json`);
+  getGreeting(token: string): Promise<any> {
+    return this.http.get(`/data/greeting.json`).toPromise().then(response => response.json());
   }
 
 }
